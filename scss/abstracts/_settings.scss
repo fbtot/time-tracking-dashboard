@@ -2,6 +2,7 @@ $base-font-size: 18px;
 $small-font-size: 18px * 0.9;
 $desktop-width: 800px;
 $mobile-width: $desktop-width - 1px;
+$blue: hsl(235, 46%, 20%);
 
 :root {
   // Colors
@@ -9,7 +10,7 @@ $mobile-width: $desktop-width - 1px;
 
   --light-red: hsl(15, 100%, 70%); // work
   --soft-blue: hsl(195, 74%, 62%); // play
-  --light-red: hsl(348, 100%, 68%); // study
+  --strong-red: hsl(348, 100%, 68%); // study
   --lime-green: hsl(145, 58%, 55%); // exercise
   --violet: hsl(264, 64%, 52%); // social
   --soft-orange: hsl(43, 84%, 65%); // self care
@@ -40,4 +41,5 @@ $mobile-width: $desktop-width - 1px;
 
   // layout
   --gap: 1rem;
+  --box-border-radius: 1rem;
 }

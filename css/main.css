@@ -3,7 +3,7 @@
   --blue: hsl(246, 80%, 60%);
   --light-red: hsl(15, 100%, 70%);
   --soft-blue: hsl(195, 74%, 62%);
-  --light-red: hsl(348, 100%, 68%);
+  --strong-red: hsl(348, 100%, 68%);
   --lime-green: hsl(145, 58%, 55%);
   --violet: hsl(264, 64%, 52%);
   --soft-orange: hsl(43, 84%, 65%);
@@ -26,6 +26,7 @@
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
   --gap: 1rem;
+  --box-border-radius: 1rem;
 }
 
 * {
@@ -211,6 +212,51 @@ input[type=submit] {
     gap: var(--gap);
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.box--no-hover, .box--soft-orange, .box--violet, .box--lime-green, .box--strong-red, .box--soft-blue, .box--light-red, .box--blue, .box {
+  background-color: var(--dark-blue);
+  border-radius: var(--box-border-radius);
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+}
+
+.box:hover {
+  background-color: #22275d;
+}
+
+.box--blue {
+  background-color: var(--blue);
+}
+
+.box--light-red {
+  background-color: var(--light-red);
+  background-image: url(../../images/icon-work.svg);
+}
+
+.box--soft-blue {
+  background-color: var(--soft-blue);
+  background-image: url(../../images/icon-play.svg);
+}
+
+.box--strong-red {
+  background-color: var(--strong-red);
+  background-image: url(../../images/icon-study.svg);
+}
+
+.box--lime-green {
+  background-color: var(--lime-green);
+  background-image: url(../../images/icon-exercise.svg);
+}
+
+.box--violet {
+  background-color: var(--violet);
+  background-image: url(../../images/icon-social.svg);
+}
+
+.box--soft-orange {
+  background-color: var(--soft-orange);
+  background-image: url(../../images/icon-self-care.svg);
 }
 
 /*# sourceMappingURL=main.css.map */

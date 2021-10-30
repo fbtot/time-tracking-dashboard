@@ -1,0 +1,58 @@
+@use "sass:color";
+@use "../index" as *;
+
+.box--no-hover {
+  background-color: var(--dark-blue);
+  border-radius: var(--box-border-radius);
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+}
+
+.box {
+  @extend .box--no-hover;
+
+  &:hover {
+    background-color: color.adjust($blue, $lightness: 5%);
+  }
+}
+
+.box--blue {
+  @extend .box--no-hover;
+  background-color: var(--blue);
+}
+
+.box--light-red {
+  @extend .box--no-hover;
+  background-color: var(--light-red);
+  background-image: url(../../images/icon-work.svg);
+}
+
+.box--soft-blue {
+  @extend .box--no-hover;
+  background-color: var(--soft-blue);
+  background-image: url(../../images/icon-play.svg);
+}
+
+.box--strong-red {
+  @extend .box--no-hover;
+  background-color: var(--strong-red);
+  background-image: url(../../images/icon-study.svg);
+}
+
+.box--lime-green {
+  @extend .box--no-hover;
+  background-color: var(--lime-green);
+  background-image: url(../../images/icon-exercise.svg);
+}
+
+.box--violet {
+  @extend .box--no-hover;
+  background-color: var(--violet);
+  background-image: url(../../images/icon-social.svg);
+}
+
+.box--soft-orange {
+  @extend .box--no-hover;
+  background-color: var(--soft-orange);
+  background-image: url(../../images/icon-self-care.svg);
+}
