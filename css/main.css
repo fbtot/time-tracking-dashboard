@@ -230,13 +230,6 @@ input[type=submit] {
 
 .box {
   padding: var(--padding-box);
-  /* mixin mq */
-  /* end mixin mq */
-}
-@media screen and (min-width: 800px) {
-  .box {
-    padding: var(--padding-box);
-  }
 }
 .box:hover {
   background-color: #22275d;
