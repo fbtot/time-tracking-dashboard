@@ -228,7 +228,7 @@ input[type=submit] {
 }
 @media screen and (min-width: 800px) {
   .box {
-    padding: 1.8rem;
+    padding: 1.4rem 1.8rem;
   }
 }
 .box:hover {
@@ -284,6 +284,7 @@ input[type=submit] {
 
 .time-card__text-container {
   width: 100%;
+  transform: scale(1.01);
 }
 
 .time-card__header {

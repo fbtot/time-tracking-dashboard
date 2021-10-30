@@ -12,7 +12,7 @@
   @extend .box--no-hover;
   padding: 1.5rem;
   @include mq($desktop-width, up) {
-    padding: 1.8rem;
+    padding: 1.4rem 1.8rem;
   }
   &:hover {
     background-color: color.adjust($blue, $lightness: 5%);
