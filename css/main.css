@@ -10,6 +10,7 @@
   --very-dark-blue: hsl(226, 43%, 10%);
   --dark-blue: hsl(235, 46%, 20%);
   --desaturated-blue: hsl(235, 45%, 61%);
+  --desaturated-lighter-blue: hsl(235, 52%, 80%);
   --pale-Blue: hsl(236, 100%, 87%);
   --text-color: hsl(0, 0%, 7%);
   --accent-color: hsl(216, 61%, 54%);
@@ -285,11 +286,26 @@ input[type=submit] {
 .time-card__text-container {
   width: 100%;
   transform: scale(1.01);
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .time-card__text-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .time-card__header {
   display: flex;
   align-items: baseline;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .time-card__header {
+    flex: 0 0 100%;
+  }
 }
 
 .time-card__category {
@@ -304,6 +320,43 @@ input[type=submit] {
 }
 .time-card__menu:hover {
   opacity: 100%;
+}
+
+.time-card__time {
+  font-size: 1.8rem;
+  font-weight: 300;
+  /* mixin mq */
+  /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .time-card__time {
+    flex: 1 0 50%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .time-card__time {
+    margin: 2rem 0 1rem 0;
+    font-size: 3rem;
+  }
+}
+
+.time-card__footer {
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .time-card__footer {
+    flex: 1 0 50%;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.time-card__prev {
+  font-size: 0.85rem;
+  color: var(--desaturated-lighter-blue);
 }
 
 /*# sourceMappingURL=main.css.map */

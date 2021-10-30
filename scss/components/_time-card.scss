@@ -13,11 +13,19 @@
 .time-card__text-container {
   width: 100%;
   transform: scale(1.01);
+  @include mq($desktop-width, down) {
+    display: flex;
+    flex-wrap: wrap;
+    //   flex-direction: column;
+  }
 }
 
 .time-card__header {
   display: flex;
   align-items: baseline;
+  @include mq($desktop-width, down) {
+    flex: 0 0 100%;
+  }
 }
 
 .time-card__category {
@@ -33,4 +41,30 @@
   &:hover {
     opacity: 100%;
   }
+}
+
+.time-card__time {
+  font-size: 1.8rem;
+  font-weight: 300;
+  @include mq($desktop-width, down) {
+    flex: 1 0 50%;
+  }
+
+  @include mq($desktop-width, up) {
+    margin: 2rem 0 1rem 0;
+    font-size: 3rem;
+  }
+}
+
+.time-card__footer {
+  @include mq($desktop-width, down) {
+    flex: 1 0 50%;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.time-card__prev {
+  font-size: 0.85rem;
+  color: var(--desaturated-lighter-blue);
 }
