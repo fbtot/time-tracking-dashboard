@@ -1,1 +1,31 @@
 @use "../index" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  gap: var(--gap);
+  padding: var(--gap);
+  margin: 0 auto;
+
+  @include mq($desktop-width, up) {
+    width: calc(1110px + 2rem);
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.header {
+  @include mq($desktop-width, up) {
+    @include row-start-end(1, -1);
+    @include column-start-end(1, 2);
+  }
+}
+
+.time-cards-container {
+  @include mq($desktop-width, up) {
+    @include column-start-end(2, 5);
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
