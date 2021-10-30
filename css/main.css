@@ -201,6 +201,8 @@ input[type=submit] {
 }
 
 .time-cards-container {
+  display: grid;
+  gap: var(--gap);
   /* mixin mq */
   /* end mixin mq */
 }
@@ -208,8 +210,6 @@ input[type=submit] {
   .time-cards-container {
     grid-column-start: 2;
     grid-column-end: 5;
-    display: grid;
-    gap: var(--gap);
     grid-template-columns: repeat(3, 1fr);
   }
 }

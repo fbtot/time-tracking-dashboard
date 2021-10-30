@@ -22,10 +22,10 @@
 }
 
 .time-cards-container {
+  display: grid;
+  gap: var(--gap);
   @include mq($desktop-width, up) {
     @include column-start-end(2, 5);
-    display: grid;
-    gap: var(--gap);
     grid-template-columns: repeat(3, 1fr);
   }
 }
