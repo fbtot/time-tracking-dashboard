@@ -9,7 +9,7 @@
   margin: 0 auto;
 
   @include mq($desktop-width, up) {
-    width: calc(1110px + 2rem);
+    width: calc(1110px + var(--gap) + var(--gap));
     grid-template-columns: 1fr 3fr;
   }
 }

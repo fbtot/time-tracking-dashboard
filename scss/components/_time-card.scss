@@ -1,0 +1,19 @@
+@use "../index" as *;
+
+.time-card {
+  display: flex;
+  justify-self: stretch;
+  padding-top: 2rem;
+
+  @include mq($desktop-width, up) {
+    padding-top: 2.5rem;
+  }
+}
+
+.time-card__text-container {
+  width: 100%;
+}
+
+.time-card__title {
+  margin-top: 0;
+}

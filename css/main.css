@@ -25,7 +25,7 @@
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
-  --gap: 1rem;
+  --gap: 1.5rem;
   --box-border-radius: 1rem;
 }
 
@@ -182,7 +182,7 @@ input[type=submit] {
 }
 @media screen and (min-width: 800px) {
   .grid {
-    width: calc(1110px + 2rem);
+    width: calc(1110px + var(--gap) + var(--gap));
     grid-template-columns: 1fr 3fr;
   }
 }
@@ -221,6 +221,16 @@ input[type=submit] {
   background-position: top -0.6rem right 1rem;
 }
 
+.box {
+  padding: 1.5rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .box {
+    padding: 1.8rem;
+  }
+}
 .box:hover {
   background-color: #22275d;
 }
@@ -257,6 +267,27 @@ input[type=submit] {
 .box--soft-orange {
   background-color: var(--soft-orange);
   background-image: url(../../images/icon-self-care.svg);
+}
+
+.time-card {
+  display: flex;
+  justify-self: stretch;
+  padding-top: 2rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .time-card {
+    padding-top: 2.5rem;
+  }
+}
+
+.time-card__text-container {
+  width: 100%;
+}
+
+.time-card__title {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
