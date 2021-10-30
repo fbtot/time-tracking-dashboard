@@ -223,7 +223,7 @@ input[type=submit] {
 }
 
 .box {
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.8rem;
   /* mixin mq */
   /* end mixin mq */
 }

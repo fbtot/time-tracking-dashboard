@@ -10,7 +10,7 @@
 
 .box {
   @extend .box--no-hover;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.8rem;
   @include mq($desktop-width, up) {
     padding: 1.4rem 1.8rem;
   }
