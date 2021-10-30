@@ -43,4 +43,11 @@ $blue: hsl(235, 46%, 20%);
   // layout
   --gap: 1.5rem;
   --box-border-radius: 1rem;
+  --padding-box: 1.5rem 1.5rem 1.8rem;
+}
+
+@media screen and (min-width: $desktop-width) {
+  :root {
+    --padding-box: 1.4rem 1.8rem;
+  }
 }

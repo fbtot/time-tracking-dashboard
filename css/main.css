@@ -28,8 +28,14 @@
   --h6-font-size: 1rem;
   --gap: 1.5rem;
   --box-border-radius: 1rem;
+  --padding-box: 1.5rem 1.5rem 1.8rem;
 }
 
+@media screen and (min-width: 800px) {
+  :root {
+    --padding-box: 1.4rem 1.8rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -223,13 +229,13 @@ input[type=submit] {
 }
 
 .box {
-  padding: 1.5rem 1.5rem 1.8rem;
+  padding: var(--padding-box);
   /* mixin mq */
   /* end mixin mq */
 }
 @media screen and (min-width: 800px) {
   .box {
-    padding: 1.4rem 1.8rem;
+    padding: var(--padding-box);
   }
 }
 .box:hover {
