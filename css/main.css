@@ -39,9 +39,14 @@ html {
 }
 
 body {
+  /* @mixin antialias */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* end @mixin antialias */
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: #eeeeee;
+  background-color: var(--very-dark-blue);
+  color: #fff;
   line-height: 1.6em;
 }
 

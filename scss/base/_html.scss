@@ -12,9 +12,11 @@ html {
 }
 
 body {
+  @include antialias;
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: rgb(238, 238, 238);
+  background-color: var(--very-dark-blue);
+  color: #fff;
   line-height: 1.6em;
 }
 
