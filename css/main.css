@@ -286,8 +286,23 @@ input[type=submit] {
   width: 100%;
 }
 
-.time-card__title {
+.time-card__header {
+  display: flex;
+  align-items: baseline;
+}
+
+.time-card__category {
   margin-top: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.time-card__menu {
+  margin-left: auto;
+  opacity: 70%;
+}
+.time-card__menu:hover {
+  opacity: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

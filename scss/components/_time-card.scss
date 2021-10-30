@@ -14,6 +14,22 @@
   width: 100%;
 }
 
-.time-card__title {
+.time-card__header {
+  display: flex;
+  align-items: baseline;
+}
+
+.time-card__category {
   margin-top: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.time-card__menu {
+  margin-left: auto;
+  opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
+  }
 }
