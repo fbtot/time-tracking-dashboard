@@ -2,6 +2,12 @@
 
 .header__user {
   padding: var(--padding-box);
+  padding-top: 2rem;
+  padding-bottom: 4.2rem;
+
+  @include mq($desktop-width, down) {
+    display: flex;
+  }
 }
 
 .header__avatar {
@@ -10,5 +16,29 @@
 
   @include mq($desktop-width, up) {
     @include circle(4.4rem);
+  }
+}
+
+.header__title-container {
+  @include mq($desktop-width, down) {
+    margin-left: 1rem;
+  }
+  @include mq($desktop-width, up) {
+    margin-top: 2rem;
+  }
+}
+
+.header__subtitle {
+  color: var(--desaturated-lighter-blue);
+  font-size: 0.8rem;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
+
+  @include mq($desktop-width, up) {
+    font-size: 2.3rem;
   }
 }

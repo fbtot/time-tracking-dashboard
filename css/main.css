@@ -360,6 +360,15 @@ input[type=submit] {
 
 .header__user {
   padding: var(--padding-box);
+  padding-top: 2rem;
+  padding-bottom: 4.2rem;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .header__user {
+    display: flex;
+  }
 }
 
 .header__avatar {
@@ -379,6 +388,41 @@ input[type=submit] {
     width: 4.4rem;
     height: 4.4rem;
     /* end @mixin circle */
+  }
+}
+
+.header__title-container {
+  /* mixin mq */
+  /* end mixin mq */
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (max-width: 799px) {
+  .header__title-container {
+    margin-left: 1rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .header__title-container {
+    margin-top: 2rem;
+  }
+}
+
+.header__subtitle {
+  color: var(--desaturated-lighter-blue);
+  font-size: 0.8rem;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .header__title {
+    font-size: 2.3rem;
   }
 }
 
