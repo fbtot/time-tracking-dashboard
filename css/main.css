@@ -365,4 +365,28 @@ input[type=submit] {
   color: var(--desaturated-lighter-blue);
 }
 
+.header__user {
+  padding: var(--padding-box);
+}
+
+.header__avatar {
+  /* @mixin circle */
+  border-radius: 1000px;
+  width: 3.8rem;
+  height: 3.8rem;
+  /* end @mixin circle */
+  border: 3px solid white;
+  /* mixin mq */
+  /* end mixin mq */
+}
+@media screen and (min-width: 800px) {
+  .header__avatar {
+    /* @mixin circle */
+    border-radius: 1000px;
+    width: 4.4rem;
+    height: 4.4rem;
+    /* end @mixin circle */
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
