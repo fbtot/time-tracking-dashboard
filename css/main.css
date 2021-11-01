@@ -442,8 +442,9 @@ input[type=submit] {
 .header__time-toggle {
   display: flex;
   justify-content: space-around;
-  margin: 1rem;
+  margin: 0rem 1rem 1.5rem;
   width: 100%;
+  height: 115px;
   /* mixin mq */
   /* end mixin mq */
 }
@@ -453,7 +454,7 @@ input[type=submit] {
     flex-wrap: wrap;
     align-content: space-between;
     margin-left: 1.8rem;
-    align-self: stretch;
+    align-self: flex-end;
   }
 }
 
