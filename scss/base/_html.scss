@@ -13,6 +13,9 @@ html {
 
 body {
   @include antialias;
+  @include center(flex);
+  min-width: 100vw;
+  min-height: 100vh;
   font-family: var(--body-font-family);
   color: var(--text-color);
   background-color: var(--very-dark-blue);

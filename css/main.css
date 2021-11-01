@@ -31,7 +31,7 @@
   --padding-box: 1.5rem 1.5rem 1.8rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   :root {
     --padding-box: 1.4rem 1.8rem;
   }
@@ -52,6 +52,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* end @mixin antialias */
+  /* @mixin center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* end @mixin center */
+  min-width: 100vw;
+  min-height: 100vh;
   font-family: var(--body-font-family);
   color: var(--text-color);
   background-color: var(--very-dark-blue);
@@ -187,7 +194,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .grid {
     width: calc(1110px + var(--gap) + var(--gap));
     grid-template-columns: 1fr 3fr;
@@ -198,7 +205,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header {
     grid-row-start: 1;
     grid-row-end: -1;
@@ -213,7 +220,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .time-cards-container {
     grid-column-start: 2;
     grid-column-end: 5;
@@ -276,7 +283,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .time-card {
     padding-top: 2.5rem;
   }
@@ -288,7 +295,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .time-card__text-container {
     display: flex;
     flex-wrap: wrap;
@@ -301,7 +308,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .time-card__header {
     flex: 0 0 100%;
   }
@@ -329,12 +336,12 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .time-card__time {
     flex: 1 0 50%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .time-card__time {
     margin: 2rem 0 1rem 0;
     font-size: 3rem;
@@ -345,7 +352,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .time-card__footer {
     flex: 1 0 50%;
     margin-left: auto;
@@ -367,12 +374,12 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .header__user {
     display: flex;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__user {
     padding-bottom: 3rem;
   }
@@ -388,7 +395,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__avatar img {
     /* @mixin circle */
     border-radius: 1000px;
@@ -404,12 +411,12 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 959px) {
   .header__title-container {
     margin-left: 1rem;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__title-container {
     margin-top: 2rem;
   }
@@ -427,7 +434,7 @@ input[type=submit] {
   /* mixin mq */
   /* end mixin mq */
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__title {
     font-size: 2.3rem;
   }
@@ -457,7 +464,7 @@ input[type=submit] {
     flex-wrap: wrap;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__time-toggle {
     height: 115px;
     flex-direction: row;
@@ -486,7 +493,7 @@ input[type=submit] {
     margin-top: 1rem;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
   .header__time-toggle__link {
     flex: 0 0 100%;
   }
