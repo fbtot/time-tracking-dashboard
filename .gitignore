@@ -1,6 +1,11 @@
 # This project #
 ######################
 /originals
+/node_modules
+.prettierignore
+package.json
+package-lock.json
+.eslintrc.json
 # Compiled source #
 ###################
 *.com
