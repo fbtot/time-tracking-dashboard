@@ -11,6 +11,12 @@
   margin: 1rem;
   width: 100%;
 
+  @include mq(300px, down, false) {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
   @include mq($desktop-width, up) {
     height: 115px;
     flex-direction: row;
@@ -27,6 +33,13 @@
   &:hover,
   &.active {
     color: white;
+  }
+
+  @include mq(300px, down, false) {
+    width: 100%;
+    + .header__time-toggle__link {
+      margin-top: 1rem;
+    }
   }
 
   @include mq($desktop-width, up) {
