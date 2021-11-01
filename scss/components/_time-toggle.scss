@@ -1,0 +1,34 @@
+@use "../index" as *;
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.header__time-toggle {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  width: 100%;
+
+  @include mq($desktop-width, up) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-left: 1.8rem;
+    align-self: stretch;
+  }
+}
+
+.header__time-toggle__link {
+  text-decoration: none;
+  color: var(--desaturated-blue);
+
+  &:hover,
+  &.active {
+    color: white;
+  }
+
+  @include mq($desktop-width, up) {
+    flex: 0 0 100%;
+  }
+}

@@ -3,10 +3,14 @@
 .header__user {
   padding: var(--padding-box);
   padding-top: 2rem;
-  padding-bottom: 4.2rem;
+  width: 100%;
 
   @include mq($desktop-width, down) {
     display: flex;
+  }
+
+  @include mq($desktop-width, up) {
+    padding-bottom: 3rem;
   }
 }
 
