@@ -15,11 +15,15 @@
 }
 
 .header__avatar {
-  @include circle(3.8rem);
-  border: 3px solid white;
+  img {
+    @include circle();
+    max-width: 3.8rem;
+    max-height: 3.8rem;
+    border: 3px solid white;
 
-  @include mq($desktop-width, up) {
-    @include circle(4.4rem);
+    @include mq($desktop-width, up) {
+      @include circle(4.4rem);
+    }
   }
 }
 

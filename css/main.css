@@ -378,18 +378,18 @@ input[type=submit] {
   }
 }
 
-.header__avatar {
+.header__avatar img {
   /* @mixin circle */
   border-radius: 1000px;
-  width: 3.8rem;
-  height: 3.8rem;
   /* end @mixin circle */
+  max-width: 3.8rem;
+  max-height: 3.8rem;
   border: 3px solid white;
   /* mixin mq */
   /* end mixin mq */
 }
 @media screen and (min-width: 800px) {
-  .header__avatar {
+  .header__avatar img {
     /* @mixin circle */
     border-radius: 1000px;
     width: 4.4rem;
