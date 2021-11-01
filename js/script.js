@@ -2,7 +2,6 @@
 /* ========================== § DOM ELEMENTS === */
 // Cards
 const timeCardEl = document.getElementsByClassName('time-card');
-
 /* ========================== § DATA FROM DOM === */
 const getCategory = (el) => el.getAttribute('data-category');
 
@@ -13,13 +12,14 @@ const currentTimeFrame = () => document.getElementsByClassName('header__time-tog
 const dataURI = './js/data.json';
 
 async function JSONdata() {
-  const resp = await fetch(dataURI);
-  const data = await resp.json();
-  // const titleJ = data[1].title;
-  const index = data.filter((el) => el.title === 'Social');
+  const response = await fetch(dataURI);
+  const data = await response.json();
+  setTime();
+  // data.forEach((el) => console.log(el.title));
 }
 
-JSONdata();
+// JSONdata().then((data) => { jjj = data; });
+/* ========================== § CHANGE DOM === */
 
 /* ========================== § UPDATE FUNCTION === */
 function update() {
