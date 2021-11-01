@@ -1,20 +1,34 @@
+/* eslint-disable no-plusplus */
+/* ========================== § DOM ELEMENTS === */
+// Cards
+const timeCardEl = document.getElementsByClassName('time-card');
+
+/* ========================== § DATA FROM DOM === */
+const getCategory = (el) => el.getAttribute('data-category');
+
+// Time toggle
+const currentTimeFrame = () => document.getElementsByClassName('header__time-toggle__link active')[0].getAttribute('data-timeframe');
+
+/* ========================== § DATA FROM JSON === */
 const dataURI = './js/data.json';
 
-async function data() {
+async function JSONdata() {
   const resp = await fetch(dataURI);
   const data = await resp.json();
-  const titleJ = data[1].title;
+  // const titleJ = data[1].title;
   const index = data.filter((el) => el.title === 'Social');
-  console.log(index[0].timeframes);
-  //   console.log(titleJ + "J");
 }
 
-data();
+JSONdata();
 
-const timeCards = document.getElementsByClassName('time-card');
-
-function getCategory(el) {
-  return el.getAttribute('data-category');
+/* ========================== § UPDATE FUNCTION === */
+function update() {
+  for (let i = 0; i < timeCardEl.length; i++) {
+    const card = timeCardEl[i];
+    currentTimeFrame();
+    const thisCardCatetory = getCategory(card);
+    console.log(thisCardCatetory, currentTimeFrame());
+  }
 }
 
-getCategory(timeCards[0]);
+update();
