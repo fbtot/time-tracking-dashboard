@@ -1,15 +1,28 @@
-/* eslint-disable no-plusplus */
 /* ========================== § DOM ELEMENTS === */
+
 // Cards
-const timeCardEl = document.getElementsByClassName('time-card');
-/* ========================== § DATA FROM DOM === */
+const timeCardsEl = document.getElementsByClassName('time-card');
+const getTimeElText = (el) => el.querySelector('.time-card__time');
+const getTimePrevElText = (el) => el.querySelector('.time-card__prev');
 const getCategory = (el) => el.getAttribute('data-category');
 
-// Time toggle
-const currentTimeFrame = () => document.getElementsByClassName('header__time-toggle__link active')[0].getAttribute('data-timeframe');
+// Menu
+const timeToggleMenuEl = document.getElementById('time-toggle-menu');
+const timeToggleLinkEl = timeToggleMenuEl.querySelectorAll('.header__time-toggle__link');
+const currentTimeframe = () => timeToggleMenuEl.querySelector('.active').getAttribute('data-timeframe');
 
-/* ========================== § DATA FROM JSON === */
+// url
 const dataURI = './js/data.json';
+
+/* ========================== § GETTING DATA FROM JSON === */
+async function data() {
+  const resp = await fetch(dataURI);
+  const data = await resp.json();
+  const titleJ = data.weekly;
+  const index = data.filter((el) => el.title === 'Social');
+  console.log(data);
+  //   console.log(titleJ + "J");
+}
 
 async function JSONdata() {
   const response = await fetch(dataURI);
