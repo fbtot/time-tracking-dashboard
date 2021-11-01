@@ -209,7 +209,7 @@ input[type=submit] {
 
 .time-cards-container {
   display: grid;
-  gap: var(--gap);
+  gap: 2rem var(--gap);
   /* mixin mq */
   /* end mixin mq */
 }
