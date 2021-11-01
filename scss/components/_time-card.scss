@@ -12,7 +12,8 @@
 
 .time-card__text-container {
   width: 100%;
-  transform: scale(1.01);
+  transform: translateY(1px);
+
   @include mq($desktop-width, down) {
     display: flex;
     flex-wrap: wrap;
