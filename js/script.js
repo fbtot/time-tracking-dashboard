@@ -13,7 +13,16 @@ function getTimeFrame() {
 }
 
 function timeFrameName() {
-  return getTimeFrame() === 'weekly' ? 'Last Week' : getTimeFrame() === 'monthly' ? 'Last Month' : 'Yesterday';
+  switch (getTimeFrame()) {
+    case 'weekly':
+      return 'Last Week';
+    case 'monthly':
+      return 'Last Month';
+    case 'daily':
+      return 'Yesterday';
+    default:
+      return 'Last Week';
+  }
 }
 
 /* ========================== § RETRIEVE DATA FROM JSON === */
