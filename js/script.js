@@ -59,13 +59,32 @@ function moreOrLess(i) {
   return 'equal';
 }
 
+function getIconEl(el) {
+  return el.getElementsByClassName('time-card__icon')[0];
+}
+
+function setIcon(el, i) {
+  switch (moreOrLess(i)) {
+    case true:
+      getIconEl(el).setAttribute('name', 'chevron-up');
+      break;
+    case false:
+      getIconEl(el).setAttribute('name', 'chevron-down');
+      break;
+    default:
+      getIconEl(el).setAttribute('name', 'code');
+      break;
+  }
+}
+
 function update() {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < timeCardsEl.length; i++) {
     const card = timeCardsEl[i];
     const thisCategory = getCategory(card);
     const index = dataJson.findIndex((el) => el.title === thisCategory);
-    console.log(moreOrLess(i));
+
+    setIcon(card, i);
     setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
     setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
   }
