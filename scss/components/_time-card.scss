@@ -13,12 +13,11 @@
 
 .time-card__text-container {
   width: 100%;
-  transform: translateY(1px);
+  border-radius: 0.8rem;
 
   @include mq($desktop-width, down) {
     display: flex;
     flex-wrap: wrap;
-    //   flex-direction: column;
   }
 }
 

@@ -306,7 +306,7 @@ input[type=submit] {
 
 .time-card__text-container {
   width: 100%;
-  transform: translateY(1px);
+  border-radius: 0.8rem;
   /* mixin mq */
   /* end mixin mq */
 }
