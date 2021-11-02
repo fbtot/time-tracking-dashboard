@@ -1,13 +1,7 @@
-/**
- * Recuperare il timeframe
- * Per ognuna delle cards, recuperare la categoria.
- * Trovare la categoria all'interno del file JSON
- * Recuperare l'incide dell'oggetto della categoria
- * Assegnare al tempo corrente e passato i relativi parametri del file in json
- */
-
 /* ========================== § DOM ELEMENTS === */
 const timeCardsEl = document.getElementsByClassName('time-card');
+const timeToggleLinkEl = document.getElementsByClassName('header__time-toggle__link');
+const timeToggleLinkElActive = () => document.getElementsByClassName('header__time-toggle__link active')[0];
 
 /* ========================== § RETRIEVE DATA FROM DOM ELEMENTS === */
 function getCategory(el) {
@@ -19,7 +13,7 @@ function getTimeFrame() {
 }
 
 function timeFrameName() {
-  return getTimeFrame() === 'weekly' ? 'Last Week' : getTimeFrame() === 'Monthly' ? 'Last Month' : 'Yesterday';
+  return getTimeFrame() === 'weekly' ? 'Last Week' : getTimeFrame() === 'monthly' ? 'Last Month' : 'Yesterday';
 }
 
 /* ========================== § RETRIEVE DATA FROM JSON === */
@@ -54,4 +48,16 @@ function update() {
     card.getElementsByClassName('time-card__time')[0].innerText = `${getTime(index, 'current')}hrs`;
     card.getElementsByClassName('time-card__prev')[0].innerText = `${timeFrameName()} - ${getTime(index, 'previous')}hrs`;
   }
+}
+
+/* ========================== § EVENT LISTENERS === */
+
+// Change timeframe
+for (const link of timeToggleLinkEl) {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    timeToggleLinkElActive().classList.remove('active');
+    link.classList.add('active');
+    dataFetch();
+  });
 }
