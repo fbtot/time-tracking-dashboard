@@ -45,6 +45,11 @@
   }
 }
 
+.time-card__main-content {
+  display: flex;
+  align-items: flex-start;
+}
+
 .time-card__time {
   @extend .fadeIn;
   opacity: 0%;
@@ -58,6 +63,11 @@
     margin: 2rem 0 1rem 0;
     font-size: 3rem;
   }
+}
+
+.time-card__icon {
+  opacity: 70%;
+  margin-left: 0.5rem;
 }
 
 .time-card__footer {
