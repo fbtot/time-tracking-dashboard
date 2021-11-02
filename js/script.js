@@ -49,6 +49,10 @@ function getTime(i, tf) {
   return dataJson[i].timeframes[getTimeFrame()][tf];
 }
 
+function setTime(el, elClass, content) {
+  el.getElementsByClassName(elClass)[0].innerText = content;
+}
+
 function update() {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < timeCardsEl.length; i++) {
@@ -56,10 +60,8 @@ function update() {
     const thisCategory = getCategory(card);
     const index = dataJson.findIndex((el) => el.title === thisCategory);
 
-    getTime(index, 'previous');
-
-    card.getElementsByClassName('time-card__time')[0].innerText = `${getTime(index, 'current')}hrs`;
-    card.getElementsByClassName('time-card__prev')[0].innerText = `${timeFrameName()} - ${getTime(index, 'previous')}hrs`;
+    setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
+    setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
   }
 }
 
