@@ -50,6 +50,7 @@ function getTime(i, tf) {
 }
 
 function update() {
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < timeCardsEl.length; i++) {
     const card = timeCardsEl[i];
     const thisCategory = getCategory(card);
