@@ -184,7 +184,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-.fadeIn, .time-card__time, .time-card__prev {
+.fadeIn, .time-card__time, .time-card__icon, .time-card__prev {
   animation-duration: 0.5s;
   animation-name: fadeIn;
   animation-fill-mode: forwards;
@@ -370,7 +370,7 @@ input[type=submit] {
 }
 
 .time-card__icon {
-  opacity: 70%;
+  opacity: 0%;
   margin-left: 0.5rem;
 }
 
