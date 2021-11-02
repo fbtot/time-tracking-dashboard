@@ -26,7 +26,7 @@ function timeFrameName() {
 }
 
 /* ========================== § RETRIEVE DATA FROM JSON === */
-const dataUrl = './js/data.json';
+const dataUrl = 'https://raw.githubusercontent.com/Filippo-B/time-tracking-dashboard/main/js/data.json';
 let dataJson = {};
 
 async function dataFetch() {
