@@ -184,6 +184,21 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.fadeIn, .time-card__time, .time-card__prev {
+  animation-duration: 0.5s;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -329,6 +344,7 @@ input[type=submit] {
 }
 
 .time-card__time {
+  opacity: 0%;
   font-size: 1.8rem;
   font-weight: 300;
   /* mixin mq */
@@ -361,6 +377,7 @@ input[type=submit] {
 }
 
 .time-card__prev {
+  opacity: 0%;
   font-size: 0.85rem;
   color: var(--desaturated-lighter-blue);
 }
