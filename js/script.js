@@ -15,13 +15,13 @@ function getTimeFrame() {
 function timeFrameName() {
   switch (getTimeFrame()) {
     case 'weekly':
-      return 'Last Week';
+      return 'Last week';
     case 'monthly':
-      return 'Last Month';
+      return 'Last month';
     case 'daily':
       return 'Yesterday';
     default:
-      return 'Last Week';
+      return 'Last week';
   }
 }
 
@@ -32,7 +32,9 @@ let dataJson = {};
 async function dataFetch() {
   const response = await fetch(dataUrl);
   dataJson = await response.json();
+  // eslint-disable-next-line no-use-before-define
   getCategoryIndex();
+  // eslint-disable-next-line no-use-before-define
   update();
 }
 
@@ -54,6 +56,7 @@ function update() {
     const index = dataJson.findIndex((el) => el.title === thisCategory);
 
     getTime(index, 'previous');
+
     card.getElementsByClassName('time-card__time')[0].innerText = `${getTime(index, 'current')}hrs`;
     card.getElementsByClassName('time-card__prev')[0].innerText = `${timeFrameName()} - ${getTime(index, 'previous')}hrs`;
   }
@@ -62,11 +65,9 @@ function update() {
 /* ========================== § EVENT LISTENERS === */
 
 // Change timeframe
-for (const link of timeToggleLinkEl) {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    timeToggleLinkElActive().classList.remove('active');
-    link.classList.add('active');
-    dataFetch();
-  });
-}
+Array.from(timeToggleLinkEl).map((el) => el.addEventListener('click', (e) => {
+  e.preventDefault();
+  timeToggleLinkElActive().classList.remove('active');
+  el.classList.add('active');
+  dataFetch();
+}));
