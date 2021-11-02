@@ -53,13 +53,19 @@ function setTime(el, elClass, content) {
   el.getElementsByClassName(elClass)[0].innerText = content;
 }
 
+function moreOrLess(i) {
+  if (getTime(i, 'current') > getTime(i, 'previous')) return true;
+  if (getTime(i, 'current') < getTime(i, 'previous')) return false;
+  return 'equal';
+}
+
 function update() {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < timeCardsEl.length; i++) {
     const card = timeCardsEl[i];
     const thisCategory = getCategory(card);
     const index = dataJson.findIndex((el) => el.title === thisCategory);
-
+    console.log(moreOrLess(i));
     setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
     setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
   }
