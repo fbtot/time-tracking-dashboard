@@ -26,7 +26,7 @@ function timeFrameName() {
 }
 
 /* ========================== § RETRIEVE DATA FROM JSON === */
-const dataUrl = 'https://raw.githubusercontent.com/Filippo-B/time-tracking-dashboard/main/js/data.jon';
+const dataUrl = 'https://raw.githubusercontent.com/Filippo-B/time-tracking-dashboard/main/js/data.json';
 let dataJson = {};
 function getCategoryIndex(cat) {
   dataJson.filter((el) => el.title === cat);
@@ -43,6 +43,9 @@ function throwError() {
 
 async function dataFetch() {
   const response = await fetch(dataUrl);
+  if (!response.ok) {
+    throwError();
+  }
   dataJson = await response.json();
   // eslint-disable-next-line no-use-before-define
   getCategoryIndex();
@@ -50,7 +53,7 @@ async function dataFetch() {
   update();
 }
 
-dataFetch().catch(throwError());
+dataFetch();
 
 /* ========================== § UPDATE FUNCTION === */
 function getTime(i, tf) {
