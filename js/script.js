@@ -118,7 +118,6 @@ function update() {
     if (errorState()) {
       setTime(card, 'time-card__time', '--');
       setTime(card, 'time-card__prev', '--');
-      console.log('error time');
     } else {
       setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
       setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
