@@ -10,7 +10,7 @@
   }
 
   @include mq($desktop-width, up) {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -49,4 +49,26 @@
   @include mq($desktop-width, up) {
     font-size: 2.3rem;
   }
+}
+
+.header__error-version,
+.header__error-version a {
+  color: var(--desaturated-lighter-blue);
+}
+
+.header__error-version {
+  line-height: 1em;
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.header__error-version__icon {
+  color: var(--strong-red);
+  vertical-align: middle;
+  font-size: 110%;
 }

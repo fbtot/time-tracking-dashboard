@@ -408,7 +408,7 @@ input[type=submit] {
 }
 @media screen and (min-width: 960px) {
   .header__user {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -465,6 +465,27 @@ input[type=submit] {
   .header__title {
     font-size: 2.3rem;
   }
+}
+
+.header__error-version,
+.header__error-version a {
+  color: var(--desaturated-lighter-blue);
+}
+
+.header__error-version {
+  line-height: 1em;
+}
+.header__error-version a {
+  text-decoration: none;
+}
+.header__error-version a:hover {
+  text-decoration: underline;
+}
+
+.header__error-version__icon {
+  color: var(--strong-red);
+  vertical-align: middle;
+  font-size: 110%;
 }
 
 .header {
