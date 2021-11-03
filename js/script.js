@@ -2,7 +2,8 @@
 const timeCardsEl = document.getElementsByClassName('time-card');
 const timeToggleLinkEl = document.getElementsByClassName('header__time-toggle__link');
 const timeToggleLinkElActive = () => document.getElementsByClassName('header__time-toggle__link active')[0];
-
+const errorVersionLinkEl = document.getElementById('error-version-link');
+const errorState = () => errorVersionLinkEl.classList.contains('active');
 /* ========================== § RETRIEVE DATA FROM DOM ELEMENTS === */
 function getCategory(el) {
   return el.getAttribute('data-category');
@@ -26,7 +27,13 @@ function timeFrameName() {
 }
 
 /* ========================== § RETRIEVE DATA FROM JSON === */
-const dataUrl = 'https://raw.githubusercontent.com/Filippo-B/time-tracking-dashboard/main/js/data.json';
+
+const dataUrl = () => {
+  if (errorState()) {
+    return 'error';
+  }
+  return 'https://raw.githubusercontent.com/Filippo-B/time-tracking-dashboard/main/js/data.json';
+};
 let dataJson = {};
 function getCategoryIndex(cat) {
   dataJson.filter((el) => el.title === cat);
@@ -42,18 +49,29 @@ function throwError() {
 }
 
 async function dataFetch() {
-  const response = await fetch(dataUrl);
+  const response = await fetch(dataUrl());
   if (!response.ok) {
     throwError();
+    update();
+  } else {
+    dataJson = await response.json();
+    // eslint-disable-next-line no-use-before-define
+    getCategoryIndex();
+    // eslint-disable-next-line no-use-before-define
+    update();
   }
-  dataJson = await response.json();
-  // eslint-disable-next-line no-use-before-define
-  getCategoryIndex();
-  // eslint-disable-next-line no-use-before-define
-  update();
 }
 
 dataFetch();
+
+/* ========================== § LINK TO ERROR VERSION === */
+function toggleReplaceText(el, before, after) {
+  if (errorVersionLinkEl.classList.contains('active')) {
+    el.innerText = el.innerText.replace(before, after);
+  } else {
+    el.innerText = el.innerText.replace(after, before);
+  }
+}
 
 /* ========================== § UPDATE FUNCTION === */
 function getTime(i, tf) {
@@ -96,8 +114,15 @@ function update() {
     const index = dataJson.findIndex((el) => el.title === thisCategory);
 
     setIcon(card, i);
-    setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
-    setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
+
+    if (errorState()) {
+      setTime(card, 'time-card__time', '--');
+      setTime(card, 'time-card__prev', '--');
+      console.log('error time');
+    } else {
+      setTime(card, 'time-card__time', `${getTime(index, 'current')}hrs`);
+      setTime(card, 'time-card__prev', `${timeFrameName()} - ${getTime(index, 'previous')}hrs`);
+    }
   }
 }
 
@@ -110,3 +135,11 @@ Array.from(timeToggleLinkEl).map((el) => el.addEventListener('click', (e) => {
   el.classList.add('active');
   dataFetch();
 }));
+
+// Version with error
+errorVersionLinkEl.addEventListener('click', (e) => {
+  e.preventDefault();
+  errorVersionLinkEl.classList.toggle('active');
+  toggleReplaceText(errorVersionLinkEl, 'with', 'without');
+  dataFetch();
+});
