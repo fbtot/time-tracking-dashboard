@@ -34,13 +34,15 @@ Users should be able to:
 
 ### What I learned
 
-I learned the basics of fetch API and working with JSON.
+I learned the basics of fetch API, async/await functions, error handling and working with JSON.
 
 ### Useful resources
 
-- [Callbacks, Promises, Async Await | JavaScript Fetch API Explained](https://www.youtube.com/watch?v=VmQ6dHvnKIM) -
+- [Sweet Alert](https://sweetalert.js.org/) - Error messages made easy.
+- [Callbacks, Promises, Async Await | JavaScript Fetch API Explained](https://www.youtube.com/watch?v=VmQ6dHvnKIM)
 - [How to Loop Through an HTMLCollection](https://dev.to/isabelxklee/how-to-loop-through-an-htmlcollection-379k)
+- [Async/Await Error Handling](https://wesbos.com/javascript/12-advanced-flow-control/71-async-await-error-handling) - Wes Bos
 
 ## Author
 
-- Frontend Mentor - [@Filippo-b](https://www.frontendmentor.io/profile/Filippo-b)
+- Frontend Mentor - [@Filippo-B](https://www.frontendmentor.io/profile/Filippo-B)
